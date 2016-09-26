@@ -4,7 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PlayerEvent extends Model
+/**
+ * Class FamilyEvent
+ * @package App\Models
+ */
+class FamilyEvent extends Model
 {
     public $timestamps = false;
 
@@ -13,5 +17,8 @@ class PlayerEvent extends Model
         'comment',
     ];
 
-    protected $dates = ['signup_datetime', 'arrive_datetime'];
+    protected $dates = [
+        'signup_datetime',
+        'arrive_datetime',
+    ];
 }

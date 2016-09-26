@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class CharacterClass
+ * @package App\Models
+ */
 class CharacterClass extends Model
 {
     protected $fillable = [
@@ -11,4 +15,12 @@ class CharacterClass extends Model
     ];
 
     public $timestamps = false;
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function character()
+    {
+        return $this->belongsTo(Character::class);
+    }
 }

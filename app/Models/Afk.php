@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Family;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Afk
+ * @package App\Models
+ */
 class Afk extends Model
 {
     protected $fillable = [
@@ -16,6 +19,9 @@ class Afk extends Model
         'end_date',
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function family()
     {
         return $this->belongsTo(Family::class);
