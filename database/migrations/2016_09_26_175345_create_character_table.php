@@ -13,7 +13,21 @@ class CreateCharacterTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('character', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('family_id')->unsigned();
+            $table->integer('class_id')->unsigned();
+            $table->timestamps();
+        });
+
+        $table->foreign('family_id')
+            ->references('id')->on('family')
+            ->onDelete('cascade');
+
+        $table->foreign('class_id')
+            ->references('id')->on('class')
+            ->onDelete('cascade');
     }
 
     /**
@@ -23,6 +37,6 @@ class CreateCharacterTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('character');
     }
 }
