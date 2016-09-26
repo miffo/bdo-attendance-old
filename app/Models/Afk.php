@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Family;
 use Illuminate\Database\Eloquent\Model;
 
 class Afk extends Model
@@ -14,4 +15,9 @@ class Afk extends Model
         'start_date',
         'end_date',
     ];
+
+    public function family()
+    {
+        return $this->belongsTo(Family::class);
+    }
 }
