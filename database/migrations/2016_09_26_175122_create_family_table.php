@@ -13,7 +13,11 @@ class CreateFamilyTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('family', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->dateTime('join_datetime');
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CreateFamilyTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('family');
     }
 }
