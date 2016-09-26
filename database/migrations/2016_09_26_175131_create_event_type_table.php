@@ -13,7 +13,10 @@ class CreateEventTypeTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('event_type', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class CreateEventTypeTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('event_type');
     }
 }
