@@ -9,6 +9,4 @@ class Family extends Model
     protected $fillable = [
         'name',
     ];
-
-    protected $dates = ['join_datetime'];
 }
