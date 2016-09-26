@@ -19,11 +19,11 @@ class CreateAfkTable extends Migration
             $table->dateTimeTz('start_date');
             $table->dateTimeTz('end_date');
             $table->timestamps();
-        });
 
-        $table->foreign('family_id')
-            ->references('id')->on('family')
-            ->onDelete('cascade');
+            $table->foreign('family_id')
+                ->references('id')->on('family')
+                ->onDelete('cascade');
+        });
     }
 
     /**

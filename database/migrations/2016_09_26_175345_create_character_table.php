@@ -19,15 +19,15 @@ class CreateCharacterTable extends Migration
             $table->integer('family_id')->unsigned();
             $table->integer('class_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('family_id')
+                ->references('id')->on('family')
+                ->onDelete('cascade');
+
+            $table->foreign('class_id')
+                ->references('id')->on('class')
+                ->onDelete('cascade');
         });
-
-        $table->foreign('family_id')
-            ->references('id')->on('family')
-            ->onDelete('cascade');
-
-        $table->foreign('class_id')
-            ->references('id')->on('class')
-            ->onDelete('cascade');
     }
 
     /**
