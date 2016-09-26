@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventType extends Model
 {
-    //
+    protected $fillable = [
+        'name',
+    ];
+
+    public $timestsamp = false;
 }
