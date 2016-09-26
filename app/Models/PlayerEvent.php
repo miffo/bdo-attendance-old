@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PlayerEvent extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'attending',
         'comment',
