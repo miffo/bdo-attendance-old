@@ -10,5 +10,5 @@ class EventType extends Model
         'name',
     ];
 
-    public $timestsamp = false;
+    public $timestamps = false;
 }
