@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Afk extends Model
 {
+    public $table = 'afk';
+
     protected $fillable = [
         'comment',
     ];
