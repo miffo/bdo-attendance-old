@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +11,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::resource('characters', CharacterController::class);
+Route::resource('families', FamilyController::class);
+Route::resource('afk', AfkController::class);
+Route::resource('classes', CharacterClassController::class);
+Route::resource('events', EventController::class);
+Route::resource('eventTypes', EventTypeController::class);
