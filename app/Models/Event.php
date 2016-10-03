@@ -10,13 +10,25 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Event extends Model
 {
+    public $table = 'event';
+
     protected $fillable = [
         'description',
     ];
 
     protected $dates = [
-        'event_datetime'
+        'event_datetime',
     ];
+
+    public function setDateAttribute($value)
+    {
+        $this->event_datetime = $value;
+    }
+
+    public function getDateAttribute()
+    {
+        return $this->event_datetime;
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

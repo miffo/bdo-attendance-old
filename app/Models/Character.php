@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Character extends Model
 {
+    public $table = 'character';
+
     protected $fillable = [
         'name',
     ];
