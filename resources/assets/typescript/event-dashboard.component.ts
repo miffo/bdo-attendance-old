@@ -13,7 +13,7 @@ import forEach = require("core-js/library/fn/array/for-each");
 <div class="grid grid-pad">
   <div *ngFor="let event of events" class="col-1-4">
     <div class="module hero">
-      <h4>{{event.event_type}} - {{ moment(event.event_datetime).format('YYYY-MM-DD HH:mm:ss) }}</h4>
+      <h4>{{event.event_type}} - {{ event.event_datetime }}</h4>
     </div>
   </div>
 </div>
