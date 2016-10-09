@@ -3,7 +3,7 @@ export class Event {
     event_type_id: number;
     event_type: string;
     description: string;
-    event_datetime: number;
+    event_datetime: string;
     //created_at: Date;
     //updated_at: Date;
     static compare(eventA: Event, eventB: Event): number {

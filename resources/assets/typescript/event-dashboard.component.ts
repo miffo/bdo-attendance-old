@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from './event.service';
-import { Event } from './event'
+import { Event } from './event';
+import * as moment from 'moment';
+
 import forEach = require("core-js/library/fn/array/for-each");
 
 @Component({
@@ -11,7 +13,7 @@ import forEach = require("core-js/library/fn/array/for-each");
 <div class="grid grid-pad">
   <div *ngFor="let event of events" class="col-1-4">
     <div class="module hero">
-      <h4>{{event.event_type}} - {{event.event_datetime}}</h4>
+      <h4>{{event.event_type}} - {{ moment(event.event_datetime).format('YYYY-MM-DD HH:mm:ss) }}</h4>
     </div>
   </div>
 </div>
@@ -30,7 +32,6 @@ export class EventDashboardComponent implements OnInit {
                     this.events.splice(i, 1);
                 }
             }
-            if ()
         });
     }
 }
